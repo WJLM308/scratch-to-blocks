@@ -171,12 +171,12 @@ INPUTS = {
     # Looks
     "looks_costume": ("({} v)", [["COSTUME", {}]]),
     "looks_backdrops": ("({} v)", [["BACKDROP", {}]]),
-    "looks_costumenumbername": ("(costume [{} v])", [["NUMBER_NAME", {}]]),
-    "looks_backdropnumbername": ("(backdrop [{} v])", [["NUMBER_NAME", {}]]),
+    "looks_costumenumbername": ("(costume ({} v))", [["NUMBER_NAME", {}]]),
+    "looks_backdropnumbername": ("(backdrop ({} v))", [["NUMBER_NAME", {}]]),
     "looks_size": ("(size)", []),
 
     # Sound
-    "sound_sounds_menu": ("[{} v]", [["SOUND_MENU", {"attrs": ["preservecase"]}]]),
+    "sound_sounds_menu": ("({} v)", [["SOUND_MENU", {"attrs": ["preservecase"]}]]),
     "sound_volume": ("(volume)", []),
 
     # Control -- check this block
@@ -184,13 +184,13 @@ INPUTS = {
 
     # Sensing
     "sensing_mousedown": ("<mouse down?>", []),
-    "sensing_touchingobject": ("<touching [{} v]?>", ["TOUCHINGOBJECTMENU"]),
+    "sensing_touchingobject": ("<touching ({} v)?>", ["TOUCHINGOBJECTMENU"]),
     "sensing_touchingobjectmenu": ("{}", [["TOUCHINGOBJECTMENU", FIELDS]]),
     "sensing_touchingcolor": ("<touching color {}?>", ["COLOR"]),
     "sensing_coloristouchingcolor": ("<color {} is touching {}?>", ["COLOR", "COLOR2"]),
-    "sensing_distanceto": ("(distance to [{} v])", ["DISTANCETOMENU"]),
+    "sensing_distanceto": ("(distance to ({} v))", ["DISTANCETOMENU"]),
     "sensing_distancetomenu": ("{}", [["DISTANCETOMENU", FIELDS]]),
-    "sensing_keypressed": ("<key [{} v] pressed?>", ["KEY_OPTION"]),
+    "sensing_keypressed": ("<key ({} v) pressed?>", ["KEY_OPTION"]),
     "sensing_keyoptions": ("{}", [["KEY_OPTION", FIELDS]]),
     "sensing_mousex": ("(mouse x)", []),
     "sensing_mousey": ("(mouse y)", []),

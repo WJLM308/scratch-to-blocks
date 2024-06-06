@@ -218,7 +218,7 @@ INPUTS = {
     "operator_join": ("(join {} {})", ["STRING1", "STRING2"]),
     "operator_letter_of": ("(letter {} of {})", ["LETTER", "STRING"]),
     "operator_length": ("(length of {})", ["STRING"]),
-    "operator_contains": ("< {} contains {}?>", ["STRING1", "STRING2"]),
+    "operator_contains": ("<{} contains {}?>", ["STRING1", "STRING2"]),
     "operator_mod": ("({} mod {})", ["NUM1", "NUM2"]),
     "operator_multiply": ("({} * {})", ["NUM1", "NUM2"]),
     "operator_divide": ("({} / {})", ["NUM1", "NUM2"]),

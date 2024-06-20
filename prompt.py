@@ -113,7 +113,7 @@ BLOCKS = {
     "data_showvariable": ("show variable [{} v]", [["VARIABLE", FIELDS]]),
 
     # Lists
-    "data_listcontents": ("&lt[{} v] contains {} &gt", [["LIST", FIELDS], "ITEM"]),
+    "data_listcontents": ("<[{} v] contains {} >", [["LIST", FIELDS], "ITEM"]),
     "data_addtolist": ("add {} to [{} v]", ["ITEM", ["LIST", FIELDS]]),
     "data_deleteoflist": ("delete {} of [{} v]", ["INDEX", ["LIST", FIELDS]]),
     "data_deletealloflist": ("delete all of [{} v]", [["LIST", FIELDS]]),
@@ -181,14 +181,14 @@ INPUTS = {
     "control_create_clone_of_menu": ("({} v)", [["CLONE_OPTION", FIELDS]]),
 
     # Sensing
-    "sensing_mousedown": ("&ltmouse down?&gt", []),
-    "sensing_touchingobject": ("&lttouching ({} v)?&gt", ["TOUCHINGOBJECTMENU"]),
+    "sensing_mousedown": ("<mouse down?>", []),
+    "sensing_touchingobject": ("<touching ({} v)?>", ["TOUCHINGOBJECTMENU"]),
     "sensing_touchingobjectmenu": ("{}", [["TOUCHINGOBJECTMENU", FIELDS]]),
-    "sensing_touchingcolor": ("&lttouching color {}?&gt", ["COLOR"]),
-    "sensing_coloristouchingcolor": ("&ltcolor {} is touching {}?&gt", ["COLOR", "COLOR2"]),
+    "sensing_touchingcolor": ("<touching color {}?>", ["COLOR"]),
+    "sensing_coloristouchingcolor": ("<color {} is touching {}?>", ["COLOR", "COLOR2"]),
     "sensing_distanceto": ("(distance to ({} v))", ["DISTANCETOMENU"]),
     "sensing_distancetomenu": ("{}", [["DISTANCETOMENU", FIELDS]]),
-    "sensing_keypressed": ("&ltkey ({} v) pressed?&gt", ["KEY_OPTION"]),
+    "sensing_keypressed": ("<key ({} v) pressed?>", ["KEY_OPTION"]),
     "sensing_keyoptions": ("{}", [["KEY_OPTION", FIELDS]]),
     "sensing_mousex": ("(mouse x)", []),
     "sensing_mousey": ("(mouse y)", []),
@@ -204,19 +204,19 @@ INPUTS = {
     # Operators
     "operator_add": ("({} + {})", ["NUM1", "NUM2"]),
     "operator_subtract": ("({} - {})", ["NUM1", "NUM2"]),
-    "operator_equals": ("&lt{} = {}&gt", ["OPERAND1", "OPERAND2"]),
+    "operator_equals": ("<{} = {}>", ["OPERAND1", "OPERAND2"]),
     "operator_random": ("(pick random {} to {})", ["FROM", "TO"]),
-    "operator_gt": ("&lt{} > {}&gt", ["OPERAND1", "OPERAND2"]),
-    "operator_lt": ("&lt{} < {}&gt", ["OPERAND1", "OPERAND2"]),
-    "operator_and": ("&lt{} and {}&gt", ["OPERAND1", "OPERAND2"]),
+    "operator_gt": ("<{} > {}>", ["OPERAND1", "OPERAND2"]),
+    "operator_lt": ("<{} < {}>", ["OPERAND1", "OPERAND2"]),
+    "operator_and": ("<{} and {}>", ["OPERAND1", "OPERAND2"]),
     "operator_round": ("(round {})", ["NUM"]),
     "operator_mathop": ("([{} v] of {} )", [["OPERATOR", FIELDS], "NUM"]),
-    "operator_or": ("&lt{} or {}&gt", ["OPERAND1", "OPERAND2"]),
-    "operator_not": ("&ltnot {}&gt", ["OPERAND"]),
+    "operator_or": ("<{} or {}>", ["OPERAND1", "OPERAND2"]),
+    "operator_not": ("<not {}>", ["OPERAND"]),
     "operator_join": ("(join {} {})", ["STRING1", "STRING2"]),
     "operator_letter_of": ("(letter {} of {})", ["LETTER", "STRING"]),
     "operator_length": ("(length of {})", ["STRING"]),
-    "operator_contains": ("&lt{} contains {}?&gt", ["STRING1", "STRING2"]),
+    "operator_contains": ("<{} contains {}?>", ["STRING1", "STRING2"]),
     "operator_mod": ("({} mod {})", ["NUM1", "NUM2"]),
     "operator_multiply": ("({} * {})", ["NUM1", "NUM2"]),
     "operator_divide": ("({} / {})", ["NUM1", "NUM2"]),
@@ -225,11 +225,11 @@ INPUTS = {
     "data_itemoflist": ("(item {} of [{} v])", ["INDEX", ["LIST", FIELDS]]),
     "data_itemnumoflist": ("(item # of {} in [{} v])", ["ITEM", ["LIST", FIELDS]]),
     "data_lengthoflist": ("(length of [{} v])", [["LIST", FIELDS]]),
-    "data_listcontainsitem": ("&lt[{} v] contains {}?&gt", [["LIST", FIELDS], "ITEM"]),
+    "data_listcontainsitem": ("<[{} v] contains {}?>", [["LIST", FIELDS], "ITEM"]),
 
     # My Blocks
     "procedures_prototype": custom_block,
-    "argument_reporter_boolean": ("&lt{}&gt", [["VALUE", {}]]),
+    "argument_reporter_boolean": ("<{}>", [["VALUE", {}]]),
     "argument_reporter_string_number": ("({})", [["VALUE", {}]]),
 
     # Pen
@@ -391,7 +391,7 @@ def generate_input(input_block, blocks):
         elif input_type == 11: # broadcast
             return f"({input_value} v)"
         elif input_type == "BOOL":
-            return f"&lt{input_value}&gt"
+            return f"<{input_value}>"
 
     else:
         raise Exception(f"Missing handler for input type {type(main_input)}")
